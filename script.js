@@ -1,9 +1,3 @@
-/*
-  Catatan kecil:
-  File ini sengaja dibuat pakai JavaScript dasar saja.
-  Jadi hitungan RC5 di bawah ini dikerjakan manual, bukan memakai library enkripsi.
-  BigInt dipakai karena JavaScript biasa kurang aman untuk hitungan 64-bit.
-*/
 
 let logs = [];
 let simpleLogs = [];
@@ -14,7 +8,7 @@ function log(msg, type = '') {
   logs.push({ msg, type });
 }
 
-// Ini log versi manusia. Isinya bukan angka teknis semua, tapi alur yang gampang dibaca.
+
 function simpleLog(title, text) {
   simpleLogs.push({ title, text });
 }
@@ -242,7 +236,7 @@ function keyExpansion(key, rounds, keyLength, wordSize) {
 }
 
 /* =========================================================
-   Ini bagian inti RC5 untuk 1 blok data.
+   Ini bagian utama  RC5 untuk 1 blok data.
    Data dibagi menjadi A dan B, lalu diputar, di-XOR, dan ditambah sub-key.
    ========================================================= */
 function encBlockDetailed(A, B, S, rounds, cfg) {
